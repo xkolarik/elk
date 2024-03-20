@@ -1,0 +1,17 @@
+<configuration>
+
+    <!-- Definição do appender para o arquivo de log -->
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>/var/log/spring/app.log</file> <!-- Caminho do arquivo de log -->
+        <append>true</append>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Configuração do logger root -->
+    <root level="INFO">
+        <appender-ref ref="FILE"/> <!-- Associando o appender FILE ao logger root -->
+    </root>
+
+</configuration>
